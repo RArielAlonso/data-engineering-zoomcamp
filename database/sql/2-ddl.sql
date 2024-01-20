@@ -1,7 +1,8 @@
+create schema public;
 
-drop table if exists schema_nyc.nyc_table;
+drop table if exists public.nyc_table;
 
-CREATE TABLE "schema_nyc.nyc_table" (
+CREATE TABLE public.nyc_table (
 "VendorID" REAL,
   "tpep_pickup_datetime" TIMESTAMP,
   "tpep_dropoff_datetime" TIMESTAMP,
