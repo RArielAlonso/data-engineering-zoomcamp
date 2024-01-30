@@ -13,9 +13,9 @@ def transform(data, *args, **kwargs):
     
     data=data[((data['passenger_count']>0) & (data['trip_distance'])>0)]
     data['lpep_pickup_date']=data['lpep_pickup_datetime'].dt.date
-    print(data.columns)
+    #print(data.columns)for question 5
     data.columns = data.columns.str.replace('(?<=[a-z])(?=[A-Z])', '_', regex=True).str.lower()
-    print(data.vendor_id.unique()) #for question number 4
+    #print(data.vendor_id.unique()) #for question number 4
     
     return data
 

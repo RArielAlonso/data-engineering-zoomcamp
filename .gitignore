@@ -2,6 +2,7 @@
 postgres-data/
 keys/
 *.json
+pg-admin-data/
 
 
 # Byte-compiled / optimized / DLL files

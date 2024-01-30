@@ -20,7 +20,9 @@ blocks:
 - all_upstream_blocks_executed: true
   color: null
   configuration: {}
-  downstream_blocks: []
+  downstream_blocks:
+  - homework_data_to_postgres
+  - homework_data_to_gcs_partition
   executor_config: null
   executor_type: local_python
   has_callback: false
@@ -33,6 +35,51 @@ blocks:
   upstream_blocks:
   - load_api_data
   uuid: homework_green_taxi_trans
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    data_provider: postgres
+    data_provider_profile: dev
+    data_provider_schema: mage
+    data_provider_table: green_taxi
+    dbt: {}
+    disable_query_preprocessing: false
+    export_write_policy: replace
+    limit: 1000
+    use_raw_sql: false
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: homework_data_to_postgres
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - homework_green_taxi_trans
+  uuid: homework_data_to_postgres
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    data_provider: postgres
+    data_provider_profile: dev
+    data_provider_schema: mage
+    export_write_policy: append
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: homework_data_to_gcs_partition
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - homework_green_taxi_trans
+  uuid: homework_data_to_gcs_partition
 cache_block_output_in_memory: false
 callbacks: []
 concurrency_config: {}
@@ -54,7 +101,7 @@ settings:
 spark_config: {}
 tags: []
 type: python
-updated_at: '2024-01-30 12:48:00'
+updated_at: '2024-01-30 13:23:07'
 uuid: green_taxi_etl
 variables_dir: /home/src/mage_data/magic-zoomcamp
 widgets: []
