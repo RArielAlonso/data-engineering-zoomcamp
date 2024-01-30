@@ -1,0 +1,7 @@
+{"operation": "create", "resource": {"type": "pipeline", "uuid": "elusive_feather"}, "timestamp": 1706288454, "user": null}
+{"operation": "create", "resource": {"type": "pipeline", "uuid": "arcane_grass"}, "timestamp": 1706288994, "user": null}
+{"operation": "create", "resource": {"type": "pipeline", "uuid": "lingering_bird"}, "timestamp": 1706290735, "user": null}
+{"operation": "create", "resource": {"type": "pipeline", "uuid": "ancient_enchanter"}, "timestamp": 1706291951, "user": null}
+{"operation": "create", "resource": {"type": "pipeline", "uuid": "thrilling_noble"}, "timestamp": 1706293207, "user": null}
+{"operation": "create", "resource": {"type": "pipeline", "uuid": "taxi_from_api_to_partition_gcs_copy"}, "timestamp": 1706294461, "user": null}
+{"operation": "create", "resource": {"type": "pipeline", "uuid": "taxi_from_api_to_partition_gcs_copy_8"}, "timestamp": 1706294474, "user": null}
