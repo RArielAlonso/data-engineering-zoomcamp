@@ -43,10 +43,12 @@ select * from `terrademo_dataset.external_green_taxi_bq_excersive`;
 #Exercise 5
 
 SELECT distinct PULocationID FROM `terrademo-412014.terrademo_dataset.green_taxi_bq_excersive_partition_clustered`
-where date(lpep_pickup_datetime) between '2022-01-06' and '2022-06-30';
+WHERE DATE(lpep_pickup_datetime)>= CAST('2022-06-01' AS DATE)
+AND DATE(lpep_pickup_datetime)<= CAST('2022-06-30' AS DATE);
 
 SELECT distinct PULocationID FROM `terrademo-412014.terrademo_dataset.green_taxi_bq_excersive`
-where date(lpep_pickup_datetime) between '2022-01-06' and '2022-06-30';
+WHERE DATE(lpep_pickup_datetime)>= CAST('2022-06-01' AS DATE)
+AND DATE(lpep_pickup_datetime)<= CAST('2022-06-30' AS DATE);
 
 #answer 5 -> 12.82 MB for non-partitioned table and 1.12 MB for the partitioned table
 
